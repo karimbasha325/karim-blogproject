@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'post/base.html'%}
+{%block title_block%}Karim's Blog Home-Page{%endblock%}
+{%block content%}
+{%if sent%}
+<h1>Your mail has been sent..!</h1>
+{%else%}
+<h1>Share "{{post.title}}" post through mail</h1><br>
+<form method="POST">
+{{form.as_p}}
+{%csrf_token%}
+<input type="submit" class="btn btn-lg btn-primary" name="" value="Send mail">
+</form><br><br>
+{%endif%}
+{%endblock%}

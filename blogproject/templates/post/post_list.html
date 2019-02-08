@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'post/base.html'%}
+{%block title_block%}Karim's Blog Home-Page{%endblock%}
+{%block content%}
+{%if tag %}
+    <h1>Posts associated with {{tag.name}}</h1>
+{%endif%}
+{%for post in post_list%}
+<h2>{{post.title}}</h2>
+<p id='day'>Published on {{post.publish}} by {{post.author|title}}</p>
+Tags:
+{%for tag in post.tags.all%}
+  <a href="{%url 'post_list_by_tag' tag.slug%}">{{tag.name}}</a>
+  {%if not forloop.last%},{%endif%}
+{%endfor%}
+<p id="body">{{post.body|truncatewords:30|linebreaks}} <span><a href="{{post.get_absolute_url}}">Read more</a></span></p>
+{%endfor%}
+{%include 'post/pagiantion.html' with page=post_list%}
+{%endblock%}

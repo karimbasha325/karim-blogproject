@@ -1,0 +1,40 @@
+.content{
+  width: 60%;
+  float: left;
+  padding: 0 0 0 30px;
+  background: orange;
+  height: 100%;
+}
+.sidebar{
+  width: 40%;
+  float: right;
+  background: red;
+  height: 100%;
+}
+h1{
+  text-align: center;
+  border-bottom: 2px solid black;
+  color: black solid 20px;
+}
+
+#day{
+  font-style: italic;
+  color: red;
+  font-size: 12px;
+}
+#body{
+  color: black;
+}
+.content h2{
+  color: blue;
+}
+#detail{
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+#pcount{
+  font-size: 40px;
+  color: yellow;
+  font-weight: bold;
+}
